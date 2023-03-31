@@ -5,6 +5,7 @@ import { SubTitleMD } from "./SubTitleMD";
 import { connect } from "react-redux";
 import { sleep, focus, breaks, relax } from "../../../../assets/icon";
 import { RootState } from "../../../../app/store";
+import { TitleMD } from "./Title";
 
 interface ComponentProps {
   source: HTMLImageElement;
@@ -26,7 +27,7 @@ export const Mode = ({ source, title, ComponentId }: Props) => {
       style={{ justifyContent: "center", alignItems: "center", gap: 10 }}
     >
       <IconMd source={source} />
-      <SubTitleMD text={title} />
+      <TitleMD text={title} />
     </View>
   );
 };

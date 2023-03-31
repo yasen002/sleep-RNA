@@ -7,15 +7,17 @@ import {
   SafeAreaView,
 } from "react-native";
 import { AppMode } from "../Component/home/AppMode";
-import SleepWindDown from "../Component/home/SleepWindDown";
 import React from "react";
 import { backgroundHome } from "../../assets/img";
 import { useSelector } from "react-redux";
 import { selectHeight, selectWidth } from "../features/device/slice";
-import MetidationTheme from "../Component/home/MetidationTheme";
-import StressRelief from "../Component/home/StressRelief";
-import CalmingDown from "../Component/home/CalmingDown";
 import ButtonGroupHome from "../Component/home/ButtonGroupHome";
+import {
+  CalmingDown,
+  MetidationTheme,
+  SoothingSleep,
+  StressRelief,
+} from "../Component/home/ThemeContainer";
 // import { useTailwind } from "tailwind-rn";
 type Props = {};
 
@@ -38,22 +40,17 @@ const Home = (props: Props) => {
         }}
       >
         <View>
-          {/*----- First Page----- */}
+          {/*----- Background hero image----- */}
           <ImageBackground
             style={{
-              height: height,
+              height: height * 0.8,
               width: width,
               zIndex: -1,
             }}
             resizeMode="cover"
             source={backgroundHome}
-          >
-            <View style={{ marginTop: height * 0.65 }}>
-              <AppMode />
-            </View>
-          </ImageBackground>
+          ></ImageBackground>
 
-          {/* -------- Second Page --------- */}
           <View
             style={{
               height: height,
@@ -65,10 +62,11 @@ const Home = (props: Props) => {
               style={{
                 position: "relative",
                 top: -(height * 0.2),
-                gap: 14,
+                gap: 20,
               }}
             >
-              <SleepWindDown />
+              <AppMode />
+              <SoothingSleep />
               <MetidationTheme />
               <StressRelief />
               <CalmingDown />

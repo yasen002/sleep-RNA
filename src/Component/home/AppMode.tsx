@@ -14,7 +14,6 @@ export const AppMode = (props: Props) => {
           alignItems: "center",
           flexDirection: "row",
           gap: 39,
-          marginBottom: 30,
         }}
       >
         <SleepMode />
