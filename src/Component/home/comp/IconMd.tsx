@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import React from "react";
 
 type Props = { source: HTMLImageElement };
@@ -13,12 +13,14 @@ export const IconMd = ({ source }: Props) => {
 
 const styles = StyleSheet.create({
   iconMd: {
-    width: 24,
-    height: 24,
+    width: 45,
+    height: 45,
   },
   iconMdBg: {
-    backgroundColor: "#c9b6b8e6",
-    padding: 15,
+    height: 45,
+    width: 45,
     borderRadius: 50,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
