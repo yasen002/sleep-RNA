@@ -1,0 +1,17 @@
+export const moon: HTMLImageElement = require("./moon.png");
+export const moon2: HTMLImageElement = require("./moon2.png");
+export const focus: HTMLImageElement = require("./focus.png");
+export const tea: HTMLImageElement = require("./tea.png");
+export const leaf: HTMLImageElement = require("./leaf.png");
+export const moonStars: HTMLImageElement = require("./moon-regular.svg");
+export const breaks: HTMLImageElement = require("./break.png");
+export const community_focus: HTMLImageElement = require("./community_focus.png");
+export const community: HTMLImageElement = require("./community.png");
+export const home_focus: HTMLImageElement = require("./home_focus.png");
+export const home: HTMLImageElement = require("./home.png");
+export const mine: HTMLImageElement = require("./mine.png");
+export const mine_focus: HTMLImageElement = require("./mine_focus.png");
+export const relax: HTMLImageElement = require("./relax.png");
+export const report_focus: HTMLImageElement = require("./report_focus.png");
+export const report: HTMLImageElement = require("./report.png");
+export const sleep: HTMLImageElement = require("./sleep.png");
