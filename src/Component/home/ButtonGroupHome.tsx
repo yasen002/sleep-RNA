@@ -1,10 +1,23 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Icon } from "react-native-elements/dist/icons/Icon";
 import { useSelector } from "react-redux";
 import { selectHeight, selectWidth } from "../../features/device/slice";
-import { IconMd } from "./comp/IconMd";
-import { leaf } from "../../../assets/icon";
+import { IconMD, IconSM } from "./comp/IconImg";
+import {
+  community,
+  home,
+  home_focus,
+  leaf,
+  mine,
+  report,
+} from "../../../assets/icon";
+import {
+  CommunityTabBtn,
+  HomeTabBtn,
+  HomeTabFocus,
+  MineTabBtn,
+  ReportTabBtn,
+} from "./comp/IconBtn";
 type Props = {};
 
 const ButtonGroupHome = (props: Props) => {
@@ -20,16 +33,16 @@ const ButtonGroupHome = (props: Props) => {
         backgroundColor: "white",
         width: width,
         height: 50,
-        justifyContent: "center",
+        justifyContent: "space-around",
         alignItems: "center",
         flexDirection: "row",
-        gap: 30,
+        paddingBottom: 25,
       }}
     >
-      <IconMd source={leaf} />
-      <IconMd source={leaf} />
-      <IconMd source={leaf} />
-      <IconMd source={leaf} />
+      <HomeTabFocus />
+      <ReportTabBtn />
+      <CommunityTabBtn />
+      <MineTabBtn />
     </View>
   );
 };

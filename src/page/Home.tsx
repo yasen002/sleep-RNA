@@ -51,27 +51,29 @@ const Home = (props: Props) => {
             source={backgroundHome}
           ></ImageBackground>
 
-          <View
-            style={{
-              height: height,
-              backgroundColor: "#a27e83",
-              zIndex: -1,
-            }}
-          >
+          <SafeAreaView>
             <View
               style={{
-                position: "relative",
-                top: -(height * 0.2),
-                gap: 20,
+                height: height,
+                backgroundColor: "#a27e83",
+                zIndex: -1,
               }}
             >
-              <AppMode />
-              <SoothingSleep />
-              <MetidationTheme />
-              <StressRelief />
-              <CalmingDown />
+              <View
+                style={{
+                  position: "relative",
+                  top: -(height * 0.2),
+                  gap: 20,
+                }}
+              >
+                <AppMode />
+                <SoothingSleep />
+                <MetidationTheme />
+                <StressRelief />
+                <CalmingDown />
+              </View>
             </View>
-          </View>
+          </SafeAreaView>
         </View>
       </ScrollView>
       <ButtonGroupHome />

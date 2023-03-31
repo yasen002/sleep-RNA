@@ -15,7 +15,7 @@ interface ComponentProps {
   text: string | null;
   margin?: number | undefined;
   padding?: number | undefined;
-  fontSize?: 12 | 16 | 15 | null;
+  fontSize?: 10 | 12 | 16 | 15 | null;
   weight?: FontWeightProperty;
   ComponentId: string;
   style?: TextStyle;
@@ -114,6 +114,32 @@ export const ThemeSubTitleSM = connect(
       style: { letterSpacing: 1 },
       fontSize: 12,
       color: "#E7CED2",
+    };
+  }
+)(Title);
+
+export const TabTitle = connect(
+  (state: RootState, ownProps: { text: string | null }): ComponentProps => {
+    return {
+      ComponentId: "TabTitle",
+      text: ownProps.text,
+      weight: "normal",
+      style: { letterSpacing: 1 },
+      fontSize: 10,
+      color: "#B5B5C0",
+    };
+  }
+)(Title);
+
+export const TabTitleFocus = connect(
+  (state: RootState, ownProps: { text: string | null }): ComponentProps => {
+    return {
+      ComponentId: "TabTitle",
+      text: ownProps.text,
+      weight: "normal",
+      style: { letterSpacing: 1 },
+      fontSize: 10,
+      color: "#333333",
     };
   }
 )(Title);
