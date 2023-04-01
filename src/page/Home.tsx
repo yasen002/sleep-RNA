@@ -18,6 +18,7 @@ import {
   SoothingSleep,
   StressRelief,
 } from "../Component/home/ThemeContainer";
+import { ClockIcon } from "../Component/home/comp/IconImg";
 // import { useTailwind } from "tailwind-rn";
 type Props = {};
 
@@ -49,7 +50,17 @@ const Home = (props: Props) => {
             }}
             resizeMode="cover"
             source={backgroundHome}
-          ></ImageBackground>
+          >
+            <View
+              style={{
+                position: "relative",
+                top: height * 0.1,
+                left: width * 0.9,
+              }}
+            >
+              <ClockIcon />
+            </View>
+          </ImageBackground>
 
           <SafeAreaView>
             <View
