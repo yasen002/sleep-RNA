@@ -12,10 +12,18 @@ import {
   mine_focus,
   report,
   report_focus,
-  focus,
 } from "../../../assets/icon";
 import { RootStackParamList, ScreenNames } from "../../Main";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
+import {
+  archWay_md,
+  egg_md,
+  ink_md,
+  peaceful_md,
+  roof_md,
+  sky_md,
+  water_md,
+} from "../../../assets";
 
 interface ComponentProps {
   componentId: string;
@@ -53,7 +61,9 @@ export const IconImg = ({
 };
 
 const styles = StyleSheet.create({
-  IconImg: {},
+  IconImg: {
+    borderRadius: 50,
+  },
   IconImgBg: {
     borderRadius: 50,
     justifyContent: "center",
@@ -190,13 +200,64 @@ export const ClockIcon = connect(
   }
 )(IconImg);
 
-export const LightCloudIcon = connect(
+export const PeaceFulIcon = connect(
   (state: RootState, ownProps): ComponentProps => {
     return {
-      componentId: "LightCloud",
-      source: focus,
-      width: 80,
-      height: 80,
+      componentId: "PeaceFul",
+      source: peaceful_md,
+      width: 100,
+      height: 100,
     };
   }
 )(IconImg);
+
+export const WaterIcon = connect(
+  (state: RootState, ownProps): ComponentProps => {
+    return {
+      componentId: "PeaceFul",
+      source: water_md,
+      width: 100,
+      height: 100,
+    };
+  }
+)(IconImg);
+
+export const EggIcon = connect((state: RootState, ownProps): ComponentProps => {
+  return {
+    componentId: "PeaceFul",
+    source: egg_md,
+    width: 100,
+    height: 100,
+  };
+})(IconImg);
+
+export const RoofIcon = connect(
+  (state: RootState, ownProps): ComponentProps => {
+    return {
+      componentId: "PeaceFul",
+      source: roof_md,
+      width: 100,
+      height: 100,
+    };
+  }
+)(IconImg);
+
+export const ArchWayIcon = connect(
+  (state: RootState, ownProps): ComponentProps => {
+    return {
+      componentId: "PeaceFul",
+      source: archWay_md,
+      width: 100,
+      height: 100,
+    };
+  }
+)(IconImg);
+
+export const SkyIcon = connect((state: RootState, ownProps): ComponentProps => {
+  return {
+    componentId: "PeaceFul",
+    source: sky_md,
+    width: 100,
+    height: 100,
+  };
+})(IconImg);

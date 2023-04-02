@@ -2,7 +2,14 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { connect, useSelector } from "react-redux";
 import { selectHeight, selectWidth } from "../../features/device/slice";
-import { LightCloudIcon } from "../home/IconImg";
+import {
+  WaterIcon,
+  PeaceFulIcon,
+  EggIcon,
+  RoofIcon,
+  ArchWayIcon,
+  SkyIcon,
+} from "../home/IconImg";
 import { LightCloudTitleMD, LightCloudTitleSM } from "../home/Title";
 import { InjectComp } from "../../../app/types";
 import { ColorValue } from "react-native";
@@ -60,7 +67,7 @@ export const LightCloudCard = connect(
       componentId: "LightCloudCard",
       title: Title,
       subTitle: SubTitle,
-      icon: LightCloudIcon,
+      icon: EggIcon,
     };
   }
 )(Card);
@@ -73,7 +80,7 @@ export const SumidaCard = connect(
       componentId: "SumidaCard",
       title: Title,
       subTitle: SubTitle,
-      icon: LightCloudIcon,
+      icon: PeaceFulIcon,
       color: "#faebeb",
     };
   }
@@ -87,7 +94,7 @@ export const MindfulCard = connect(
       componentId: "MindfulCard",
       title: Title,
       subTitle: SubTitle,
-      icon: LightCloudIcon,
+      icon: WaterIcon,
       color: "#e4eded",
     };
   }
@@ -101,7 +108,7 @@ export const PliantCard = connect(
       componentId: "PliantCard",
       title: Title,
       subTitle: SubTitle,
-      icon: LightCloudIcon,
+      icon: RoofIcon,
       color: "#e8ece1",
     };
   }
@@ -115,7 +122,7 @@ export const RestDayCard = connect(
       componentId: "RestDayCard",
       title: Title,
       subTitle: SubTitle,
-      icon: LightCloudIcon,
+      icon: ArchWayIcon,
       color: "#efe9e1",
     };
   }
@@ -128,7 +135,7 @@ export const SkyCard = connect((state: RootState, ownProps): ComponentProps => {
     componentId: "SkyCard",
     title: Title,
     subTitle: SubTitle,
-    icon: LightCloudIcon,
+    icon: SkyIcon,
     color: "#f0e7e2",
   };
 })(Card);

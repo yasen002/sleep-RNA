@@ -32,7 +32,6 @@ const Breaks = (props: Props) => {
             style={{
               flexDirection: "row",
               justifyContent: "space-around",
-              // alignContent: "space-around",
             }}
           >
             <SumidaCard />
@@ -42,17 +41,15 @@ const Breaks = (props: Props) => {
             style={{
               flexDirection: "row",
               justifyContent: "space-around",
-              // alignContent: "space-around",
             }}
           >
-            <LightCloudCard />
             <PliantCard />
+            <LightCloudCard />
           </View>
           <View
             style={{
               flexDirection: "row",
               justifyContent: "space-around",
-              // alignContent: "space-around",
             }}
           >
             <RestDayCard />
