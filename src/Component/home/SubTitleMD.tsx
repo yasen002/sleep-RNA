@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { FontWeightProperty } from "../../../../app/types/CSS";
+import { FontWeightProperty } from "../../../app/types/CSS";
 
 type Props = {
   text: string | null;

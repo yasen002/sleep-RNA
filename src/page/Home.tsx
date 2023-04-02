@@ -18,7 +18,7 @@ import {
   SoothingSleep,
   StressRelief,
 } from "../Component/home/ThemeContainer";
-import { ClockIcon } from "../Component/home/comp/IconImg";
+import { ClockIcon } from "../Component/home/IconImg";
 // import { useTailwind } from "tailwind-rn";
 type Props = {};
 

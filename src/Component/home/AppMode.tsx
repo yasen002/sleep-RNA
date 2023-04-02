@@ -1,7 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
-import { moon, focus, tea, leaf } from "../../../assets/icon";
-import { BreakMode, FocusMode, Mode, RelaxMode, SleepMode } from "./comp/Mode";
+import { BreakMode, FocusMode, RelaxMode, SleepMode } from "./Mode";
 
 type Props = {};
 

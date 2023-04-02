@@ -7,9 +7,9 @@ import {
   ViewStyle,
 } from "react-native";
 import React from "react";
-import { FontWeightProperty } from "../../../../app/types/CSS";
+import { FontWeightProperty } from "../../../app/types/CSS";
 import { connect } from "react-redux";
-import { RootState } from "../../../../app/store";
+import { RootState } from "../../../app/store";
 
 interface ComponentProps {
   text: string | null;
@@ -117,6 +117,18 @@ export const ThemeSubTitleSM = connect(
     };
   }
 )(Title);
+export const LightCloudTitleSM = connect(
+  (state: RootState, ownProps: { text: string | null }): ComponentProps => {
+    return {
+      ComponentId: "LightCloudTitleSM",
+      text: ownProps.text,
+      weight: "normal",
+      style: { letterSpacing: 1 },
+      fontSize: 12,
+      color: "#787878",
+    };
+  }
+)(Title);
 
 export const TabTitle = connect(
   (state: RootState, ownProps: { text: string | null }): ComponentProps => {
@@ -140,6 +152,20 @@ export const TabTitleFocus = connect(
       style: { letterSpacing: 1 },
       fontSize: 10,
       color: "#333333",
+    };
+  }
+)(Title);
+
+export const LightCloudTitleMD = connect(
+  (state: RootState, ownProps: { text: string | null }): ComponentProps => {
+    return {
+      ComponentId: "ThemeSubTitleMD",
+      text: ownProps.text,
+      weight: 700,
+      style: { letterSpacing: 1 },
+      fontSize: 15,
+      color: "#787878",
+      containerStyle: { marginBottom: 1 },
     };
   }
 )(Title);

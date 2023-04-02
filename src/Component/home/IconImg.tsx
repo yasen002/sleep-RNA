@@ -1,7 +1,7 @@
 import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { connect } from "react-redux";
-import { RootState } from "../../../../app/store";
+import { RootState } from "../../../app/store";
 import {
   clock,
   community,
@@ -12,9 +12,9 @@ import {
   mine_focus,
   report,
   report_focus,
-  sleep,
-} from "../../../../assets/icon";
-import { RootStackParamList, ScreenNames } from "../../../Main";
+  focus,
+} from "../../../assets/icon";
+import { RootStackParamList, ScreenNames } from "../../Main";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 
 interface ComponentProps {
@@ -186,6 +186,17 @@ export const ClockIcon = connect(
       width: 20,
       height: 20,
       natigate: "RecentSessions",
+    };
+  }
+)(IconImg);
+
+export const LightCloudIcon = connect(
+  (state: RootState, ownProps): ComponentProps => {
+    return {
+      componentId: "LightCloud",
+      source: focus,
+      width: 80,
+      height: 80,
     };
   }
 )(IconImg);

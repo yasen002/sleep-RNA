@@ -2,10 +2,10 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import { IconMD } from "./IconImg";
 import { connect } from "react-redux";
-import { sleep, focus, breaks, relax } from "../../../../assets/icon";
-import { RootState } from "../../../../app/store";
+import { sleep, focus, breaks, relax } from "../../../assets/icon";
+import { RootState } from "../../../app/store";
 import { TitleMD } from "./Title";
-import { ScreenNames } from "../../../Main";
+import { ScreenNames } from "../../Main";
 
 interface ComponentProps {
   source: HTMLImageElement;
