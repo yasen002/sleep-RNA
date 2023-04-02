@@ -78,3 +78,17 @@ export const SleepThemeMD = connect(
     };
   }
 )(BoxImg);
+
+export const SleepThemeLG = connect(
+  (
+    state: RootState,
+    ownProps: { source: HTMLImageElement }
+  ): ComponentProps => {
+    return {
+      ComponentId: "ThemeImg",
+      source: ownProps.source,
+      width: 147,
+      height: 180,
+    };
+  }
+)(BoxImg);
