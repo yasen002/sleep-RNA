@@ -1,4 +1,10 @@
-import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import {
+  ColorValue,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import React from "react";
 
 import {
@@ -15,20 +21,27 @@ import { ThemeCard } from "./ThemeCard";
 import { ThemeTitle } from "../Title";
 import { connect } from "react-redux";
 import { RootState } from "../../../app/store";
+import { HealingMelody, SubtleStrings, UrbanRomance } from "../sleep/ThemeCard";
 
 interface ComponentProps {
   ComponentId: string;
   title: string;
   themeCards: (props?: any) => JSX.Element;
+  titleColor?: ColorValue;
 }
 interface ComponentDispatch {}
 type Props = ComponentProps & ComponentDispatch;
-export const ThemeContainer = ({ ComponentId, title, themeCards }: Props) => {
+export const ThemeContainer = ({
+  ComponentId,
+  title,
+  themeCards,
+  titleColor,
+}: Props) => {
   const Cards = themeCards;
 
   return (
     <View id={ComponentId}>
-      <ThemeTitle text={title} />
+      <ThemeTitle color={titleColor} text={title} />
       <SafeAreaView>
         <ScrollView
           style={styles.container}
@@ -228,6 +241,60 @@ export const CalmingDown = connect(
       ComponentId: "CalmingDown",
       title: "Calming Down",
       themeCards,
+    };
+  }
+)(ThemeContainer);
+
+export const SleepSounds = connect(
+  (state: RootState, ownProps): ComponentProps => {
+    const themeCards = (): JSX.Element => {
+      return (
+        <View
+          style={{
+            flexDirection: "row",
+
+            gap: 16,
+          }}
+        >
+          <HealingMelody />
+          <SubtleStrings />
+          <UrbanRomance />
+        </View>
+      );
+    };
+
+    return {
+      ComponentId: "SleepSounds",
+      title: "Sleep Sounds",
+      themeCards,
+      titleColor: "black",
+    };
+  }
+)(ThemeContainer);
+
+export const EveningRadio = connect(
+  (state: RootState, ownProps): ComponentProps => {
+    const themeCards = (): JSX.Element => {
+      return (
+        <View
+          style={{
+            flexDirection: "row",
+
+            gap: 16,
+          }}
+        >
+          <HealingMelody />
+          <SubtleStrings />
+          <UrbanRomance />
+        </View>
+      );
+    };
+
+    return {
+      ComponentId: "EveningRadio",
+      title: "Evening Radio",
+      themeCards,
+      titleColor: "black",
     };
   }
 )(ThemeContainer);

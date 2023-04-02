@@ -69,13 +69,17 @@ export const TitleLG = connect(
 )(Title);
 
 export const ThemeTitle = connect(
-  (state: RootState, ownProps: { text: string }): ComponentProps => {
+  (
+    state: RootState,
+    ownProps: { text: string; color?: ColorValue }
+  ): ComponentProps => {
     return {
       ComponentId: "ThemeTitle",
       text: ownProps.text,
       fontSize: 16,
       weight: 500,
       containerStyle: { marginLeft: 16, marginBottom: 10 },
+      color: ownProps.color,
     };
   }
 )(Title);
@@ -190,7 +194,32 @@ export const SleepTitleMdBlack = connect(
         textAlign: ownProps.align,
       },
       fontSize: 14,
-      color: "#787878",
+      color: "black",
+    };
+  }
+)(Title);
+
+export const SleepTitleMdGray = connect(
+  (
+    state: RootState,
+    ownProps: {
+      text: string | null;
+      width?: number;
+      align?: TextStyle["textAlign"];
+    }
+  ): ComponentProps => {
+    return {
+      ComponentId: "LightCloudTitleSM",
+      text: ownProps.text,
+      weight: "normal",
+      style: {
+        letterSpacing: 1,
+        flexWrap: "wrap",
+        width: ownProps.width ?? "auto",
+        textAlign: ownProps.align,
+      },
+      fontSize: 14,
+      color: "#777777",
     };
   }
 )(Title);

@@ -1,17 +1,20 @@
 import { StyleSheet, View, ViewStyle } from "react-native";
 import React from "react";
-import { SleepThemeSM, ThemeImg } from "../BoxImg";
+import { SleepThemeMD, SleepThemeSM, ThemeImg } from "../BoxImg";
 // import { ThemeSubTitleMD, ThemeSubTitleSM } from "./Title";
 import { InjectComp } from "../../../app/types";
 import { connect } from "react-redux";
 import {
   backToSleep,
+  healingMelody,
   improveSleep,
   relaxSleep,
   sleepKnowlogy,
+  subtleStrings,
+  urbanRomance,
 } from "../../../assets";
 import TouchableCard from "./Touchable";
-import { SleepTitleMdBlack, Title } from "../Title";
+import { SleepTitleMdBlack, SleepTitleMdGray, Title } from "../Title";
 
 type ComponentProps = {
   //   source: HTMLImageElement;
@@ -107,12 +110,36 @@ export const SleepKnowlogy = connect((): ComponentProps => {
 })(ThemeCard);
 
 export const HealingMelody = connect((): ComponentProps => {
-  const Img = () => <SleepThemeSM source={sleepKnowlogy} />;
+  const Img = () => <SleepThemeMD source={healingMelody} />;
   const Title = () => (
-    <SleepTitleMdBlack text={"learn"} width={80} align={"center"} />
+    <SleepTitleMdGray text={"healing melody"} align={"center"} />
   );
   return {
-    componentId: "SleepKnowlogy",
+    componentId: "HealingMelody",
+    imgs: Img,
+    Title,
+  };
+})(ThemeCard);
+
+export const SubtleStrings = connect((): ComponentProps => {
+  const Img = () => <SleepThemeMD source={subtleStrings} />;
+  const Title = () => (
+    <SleepTitleMdGray text={"subtle strings"} align={"center"} />
+  );
+  return {
+    componentId: "SubtleStrings",
+    imgs: Img,
+    Title,
+  };
+})(ThemeCard);
+
+export const UrbanRomance = connect((): ComponentProps => {
+  const Img = () => <SleepThemeMD source={urbanRomance} />;
+  const Title = () => (
+    <SleepTitleMdGray text={"urban romance"} align={"center"} />
+  );
+  return {
+    componentId: "UrbanRomance",
     imgs: Img,
     Title,
   };
