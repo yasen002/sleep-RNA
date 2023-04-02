@@ -10,7 +10,7 @@ import {
   ArchWayIcon,
   SkyIcon,
 } from "../home/IconImg";
-import { LightCloudTitleMD, LightCloudTitleSM } from "../home/Title";
+import { LightCloudTitleMD, LightCloudTitleSM } from "../Title";
 import { InjectComp } from "../../../app/types";
 import { ColorValue } from "react-native";
 import { RootState } from "../../../app/store";
@@ -48,6 +48,14 @@ export const Card = ({
         justifyContent: "center",
         alignItems: "center",
         gap: 20,
+        elevation: 2,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
       }}
     >
       <Icon />

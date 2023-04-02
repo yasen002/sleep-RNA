@@ -14,7 +14,7 @@ import {
 import { connect } from "react-redux";
 import { home, report, community, mine } from "../../../assets/icon";
 import { RootState } from "../../../app/store";
-import { TabTitle, TabTitleFocus, TitleMD } from "./Title";
+import { TabTitle, TabTitleFocus, TitleMD } from "../Title";
 import { InjectComp } from "../../../app/types";
 
 interface ComponentProps {

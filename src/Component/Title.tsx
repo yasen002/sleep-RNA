@@ -7,15 +7,15 @@ import {
   ViewStyle,
 } from "react-native";
 import React from "react";
-import { FontWeightProperty } from "../../../app/types/CSS";
+import { FontWeightProperty } from "../../app/types/CSS";
 import { connect } from "react-redux";
-import { RootState } from "../../../app/store";
+import { RootState } from "../../app/store";
 
 interface ComponentProps {
   text: string | null;
   margin?: number | undefined;
   padding?: number | undefined;
-  fontSize?: 10 | 12 | 16 | 15 | null;
+  fontSize?: 10 | 12 | 16 | 15 | 14 | null;
   weight?: FontWeightProperty;
   ComponentId: string;
   style?: TextStyle;
@@ -71,7 +71,7 @@ export const TitleLG = connect(
 export const ThemeTitle = connect(
   (state: RootState, ownProps: { text: string }): ComponentProps => {
     return {
-      ComponentId: "TitleLG",
+      ComponentId: "ThemeTitle",
       text: ownProps.text,
       fontSize: 16,
       weight: 500,
@@ -166,6 +166,31 @@ export const LightCloudTitleMD = connect(
       fontSize: 15,
       color: "#787878",
       containerStyle: { marginBottom: 1 },
+    };
+  }
+)(Title);
+
+export const SleepTitleMdBlack = connect(
+  (
+    state: RootState,
+    ownProps: {
+      text: string | null;
+      width?: number;
+      align?: TextStyle["textAlign"];
+    }
+  ): ComponentProps => {
+    return {
+      ComponentId: "LightCloudTitleSM",
+      text: ownProps.text,
+      weight: "normal",
+      style: {
+        letterSpacing: 1,
+        flexWrap: "wrap",
+        width: ownProps.width ?? "auto",
+        textAlign: ownProps.align,
+      },
+      fontSize: 14,
+      color: "#787878",
     };
   }
 )(Title);

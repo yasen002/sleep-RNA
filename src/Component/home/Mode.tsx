@@ -4,7 +4,7 @@ import { IconMD } from "./IconImg";
 import { connect } from "react-redux";
 import { sleep, focus, breaks, relax } from "../../../assets/icon";
 import { RootState } from "../../../app/store";
-import { TitleMD } from "./Title";
+import { TitleMD } from "../Title";
 import { ScreenNames } from "../../Main";
 
 interface ComponentProps {
