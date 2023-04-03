@@ -58,7 +58,11 @@ const Main = () => {
           name="Home"
           component={Home}
         />
-        <Stack.Screen name="RecentSessions" component={RecentSessions} />
+        <Stack.Screen
+          name="RecentSessions"
+          component={RecentSessions}
+          options={{ title: "Recent Sessions" }}
+        />
         <Stack.Screen name="Breaks" component={Breaks} />
         <Stack.Screen name="Community" component={Community} />
         <Stack.Screen name="Focus" component={Focus} />

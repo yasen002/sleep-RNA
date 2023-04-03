@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectHeight, selectWidth } from "../../features/device/slice";
-import { IconMD, IconSM } from "./comp/IconImg";
+import { IconMD, IconSM } from "./IconImg";
 import {
   community,
   home,
@@ -17,7 +17,7 @@ import {
   HomeTabFocus,
   MineTabBtn,
   ReportTabBtn,
-} from "./comp/IconBtn";
+} from "./IconBtn";
 type Props = {};
 
 const ButtonGroupHome = (props: Props) => {

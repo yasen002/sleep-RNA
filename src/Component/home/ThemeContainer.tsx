@@ -11,8 +11,8 @@ import {
   sleep07,
   sleep08,
 } from "../../../assets/sleepWindDown";
-import { ThemeCard } from "./comp/ThemeCard";
-import { ThemeTitle } from "./comp/Title";
+import { ThemeCard } from "./ThemeCard";
+import { ThemeTitle } from "./Title";
 import { connect } from "react-redux";
 import { RootState } from "../../../app/store";
 
