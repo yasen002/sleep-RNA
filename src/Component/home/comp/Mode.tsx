@@ -1,10 +1,10 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
-import { IconMd } from "./IconMd";
-import { SubTitleMD } from "./SubTitleMD";
+import { IconMD } from "./IconImg";
 import { connect } from "react-redux";
 import { sleep, focus, breaks, relax } from "../../../../assets/icon";
 import { RootState } from "../../../../app/store";
+import { TitleMD } from "./Title";
 
 interface ComponentProps {
   source: HTMLImageElement;
@@ -25,8 +25,8 @@ export const Mode = ({ source, title, ComponentId }: Props) => {
       id={ComponentId}
       style={{ justifyContent: "center", alignItems: "center", gap: 10 }}
     >
-      <IconMd source={source} />
-      <SubTitleMD text={title} />
+      <IconMD source={source} />
+      <TitleMD text={title} />
     </View>
   );
 };

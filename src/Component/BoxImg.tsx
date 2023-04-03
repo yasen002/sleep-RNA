@@ -1,12 +1,28 @@
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, Image, View, ViewStyle } from "react-native";
 import React from "react";
+import { connect } from "react-redux";
+import { RootState } from "../../app/store";
 
-type Props = { source: HTMLImageElement };
+interface ComponentProps {
+  source: HTMLImageElement;
+  ComponentId: string;
+  width?: number;
+  height?: number;
+  containerStyle?: ViewStyle;
+}
+interface ComponentDispatch {}
 
-const BoxImg = ({ source }: Props) => {
+type Props = ComponentProps & ComponentDispatch;
+
+const BoxImg = ({
+  source,
+  width = 158,
+  height = 158,
+  containerStyle = {},
+}: Props) => {
   return (
-    <View style={styles.imgContainer}>
-      <Image style={styles.img} source={source} />
+    <View style={{ ...containerStyle }}>
+      <Image style={{ ...styles.img, width, height }} source={source} />
     </View>
   );
 };
@@ -15,12 +31,22 @@ export default BoxImg;
 
 const styles = StyleSheet.create({
   img: {
-    width: 150,
-    height: 150,
     borderRadius: 10,
     resizeMode: "cover",
   },
-  imgContainer: {
-    justifyContent: "center",
-  },
 });
+
+export const ThemeImg = connect(
+  (
+    state: RootState,
+    ownProps: { source: HTMLImageElement }
+  ): ComponentProps => {
+    return {
+      ComponentId: "ThemeImg",
+      source: ownProps.source,
+      width: 158,
+      height: 158,
+      containerStyle: { marginBottom: 8 },
+    };
+  }
+)(BoxImg);
