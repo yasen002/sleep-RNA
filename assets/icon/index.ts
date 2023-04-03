@@ -15,3 +15,4 @@ export const relax: HTMLImageElement = require("./relax.png");
 export const report_focus: HTMLImageElement = require("./report_focus.png");
 export const report: HTMLImageElement = require("./report.png");
 export const sleep: HTMLImageElement = require("./sleep.png");
+export const clock: HTMLImageElement = require("./clock.png");
