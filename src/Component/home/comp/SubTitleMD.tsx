@@ -17,7 +17,7 @@ export const SubTitleMD = ({ text, margin, padding }: Props) => {
           letterSpacing: 1,
           margin: margin,
           padding: padding,
-          fontSize: 10,
+          fontSize: 12,
         }}
       >
         {text}
