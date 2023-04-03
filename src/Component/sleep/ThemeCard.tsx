@@ -1,17 +1,20 @@
 import { StyleSheet, View, ViewStyle } from "react-native";
 import React from "react";
-import { SleepThemeMD, SleepThemeSM, ThemeImg } from "../BoxImg";
+import { SleepThemeLG, SleepThemeMD, SleepThemeSM, ThemeImg } from "../BoxImg";
 // import { ThemeSubTitleMD, ThemeSubTitleSM } from "./Title";
 import { InjectComp } from "../../../app/types";
 import { connect } from "react-redux";
 import {
   backToSleep,
+  culinaryAdventure,
   healingMelody,
   improveSleep,
   relaxSleep,
+  romance,
   sleepKnowlogy,
   subtleStrings,
   urbanRomance,
+  wildJourney,
 } from "../../../assets";
 import TouchableCard from "./Touchable";
 import { SleepTitleMdBlack, SleepTitleMdGray, Title } from "../Title";
@@ -140,6 +143,40 @@ export const UrbanRomance = connect((): ComponentProps => {
   );
   return {
     componentId: "UrbanRomance",
+    imgs: Img,
+    Title,
+  };
+})(ThemeCard);
+
+export const WildJourney = connect((): ComponentProps => {
+  const Img = () => <SleepThemeLG source={wildJourney} />;
+  const Title = () => (
+    <SleepTitleMdGray text={"wild journey"} align={"center"} />
+  );
+  return {
+    componentId: "WildJourney",
+    imgs: Img,
+    Title,
+  };
+})(ThemeCard);
+
+export const CulinaryAdventure = connect((): ComponentProps => {
+  const Img = () => <SleepThemeLG source={culinaryAdventure} />;
+  const Title = () => (
+    <SleepTitleMdGray text={"culinary adventure"} align={"center"} />
+  );
+  return {
+    componentId: "CulinaryAdventure",
+    imgs: Img,
+    Title,
+  };
+})(ThemeCard);
+
+export const Romance = connect((): ComponentProps => {
+  const Img = () => <SleepThemeLG source={romance} />;
+  const Title = () => <SleepTitleMdGray text={"romance"} align={"center"} />;
+  return {
+    componentId: "Romance",
     imgs: Img,
     Title,
   };

@@ -46,6 +46,7 @@ const Main = () => {
   useEffect(() => {
     dispatch(setWidth(width));
     dispatch(setHeight(height));
+    console.log("dispatch width and height");
   }, []);
 
   return (

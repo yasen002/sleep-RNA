@@ -21,7 +21,14 @@ import { ThemeCard } from "./ThemeCard";
 import { ThemeTitle } from "../Title";
 import { connect } from "react-redux";
 import { RootState } from "../../../app/store";
-import { HealingMelody, SubtleStrings, UrbanRomance } from "../sleep/ThemeCard";
+import {
+  CulinaryAdventure,
+  HealingMelody,
+  Romance,
+  SubtleStrings,
+  UrbanRomance,
+  WildJourney,
+} from "../sleep/ThemeCard";
 
 interface ComponentProps {
   ComponentId: string;
@@ -252,7 +259,6 @@ export const SleepSounds = connect(
         <View
           style={{
             flexDirection: "row",
-
             gap: 16,
           }}
         >
@@ -279,13 +285,12 @@ export const EveningRadio = connect(
         <View
           style={{
             flexDirection: "row",
-
             gap: 16,
           }}
         >
-          <HealingMelody />
-          <SubtleStrings />
-          <UrbanRomance />
+          <WildJourney />
+          <CulinaryAdventure />
+          <Romance />
         </View>
       );
     };

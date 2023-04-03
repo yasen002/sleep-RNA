@@ -14,5 +14,5 @@ export const healingMelody: HTMLImageElement = require("./healingMelody.png");
 export const subtleStrings: HTMLImageElement = require("./subtleStrings.png");
 export const urbanRomance: HTMLImageElement = require("./urbanRomance.png");
 export const wildJourney: HTMLImageElement = require("./wildJourney.png");
-export const culilnaryAdventure: HTMLImageElement = require("./culilnaryAdventure.png");
+export const culinaryAdventure: HTMLImageElement = require("./culinaryAdventure.png");
 export const romance: HTMLImageElement = require("./romance.png");
