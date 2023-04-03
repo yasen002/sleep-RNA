@@ -1,7 +1,7 @@
 import { StyleSheet, View, ViewStyle } from "react-native";
 import React from "react";
 import { ThemeImg } from "../BoxImg";
-import { ThemeSubTitleMD, ThemeSubTitleSM } from "./Title";
+import { ThemeSubTitleMD, ThemeSubTitleSM } from "../Title";
 
 type Props = {
   source: HTMLImageElement;

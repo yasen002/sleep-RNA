@@ -12,7 +12,7 @@ import {
   sleep08,
 } from "../../../assets/sleepWindDown";
 import { ThemeCard } from "./ThemeCard";
-import { ThemeTitle } from "./Title";
+import { ThemeTitle } from "../Title";
 import { connect } from "react-redux";
 import { RootState } from "../../../app/store";
 
