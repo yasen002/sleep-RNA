@@ -1,7 +1,6 @@
 import { StyleSheet, View, ViewStyle } from "react-native";
 import React from "react";
 import { SleepThemeLG, SleepThemeMD, SleepThemeSM, ThemeImg } from "../BoxImg";
-// import { ThemeSubTitleMD, ThemeSubTitleSM } from "./Title";
 import { InjectComp } from "../../../app/types";
 import { connect } from "react-redux";
 import {
@@ -16,13 +15,11 @@ import {
   urbanRomance,
   wildJourney,
 } from "../../../assets";
-import TouchableCard from "./Touchable";
+import TouchableCard from "../Touchable";
 import { SleepTitleMdBlack, SleepTitleMdGray, Title } from "../Title";
 
 type ComponentProps = {
-  //   source: HTMLImageElement;
   Title?: InjectComp;
-  //   subTitle?: string | null;
   containerStyle?: ViewStyle;
   componentId: string;
   imgs: InjectComp;
@@ -33,9 +30,6 @@ type ComponentDispatch = {};
 type Props = ComponentProps & ComponentDispatch;
 
 export const ThemeCard = ({
-  //   source,
-  //   title = null,
-  //   subTitle = null,
   Title = () => <View></View>,
   containerStyle,
   componentId,
@@ -53,11 +47,10 @@ export const ThemeCard = ({
     >
       <TouchableCard>
         <Img />
-        <Title />
+        <View style={{ marginTop: 8 }}>
+          <Title />
+        </View>
       </TouchableCard>
-      {/* <ThemeImg source={source} />
-      <ThemeSubTitleMD text={title} />
-      <ThemeSubTitleSM text={subTitle} /> */}
     </View>
   );
 };

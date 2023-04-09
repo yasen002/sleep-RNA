@@ -17,13 +17,13 @@ const Separator = () => {
 
 const Breaks = (props: Props) => {
   return (
-    <View style={{ backgroundColor: "white" }}>
+    <View style={{ backgroundColor: "white", paddingTop: 20 }}>
       <ScrollView
         bounces={true}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         contentInset={{
-          top: 20,
+          top: 2,
           bottom: 20,
         }}
       >

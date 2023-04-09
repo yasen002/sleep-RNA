@@ -58,12 +58,16 @@ export const Title = ({
 const styles = StyleSheet.create({});
 
 export const TitleLG = connect(
-  (state: RootState, ownProps: { text: string }): ComponentProps => {
+  (
+    state: RootState,
+    ownProps: { text: string; color?: ColorValue }
+  ): ComponentProps => {
     return {
       ComponentId: "TitleLG",
       text: ownProps.text,
       fontSize: 16,
       weight: 500,
+      color: ownProps.color ?? "white",
     };
   }
 )(Title);
@@ -85,12 +89,16 @@ export const ThemeTitle = connect(
 )(Title);
 
 export const TitleMD = connect(
-  (state: RootState, ownProps: { text: string }): ComponentProps => {
+  (
+    state: RootState,
+    ownProps: { text: string; color?: ColorValue }
+  ): ComponentProps => {
     return {
       ComponentId: "TitleMD",
       text: ownProps.text,
       weight: "normal",
-      style: { letterSpacing: 1, color: "#FFF1F4" },
+      style: { letterSpacing: 1 },
+      color: ownProps.color ?? "#FFF1F4",
       fontSize: 12,
     };
   }
@@ -110,14 +118,17 @@ export const ThemeSubTitleMD = connect(
 )(Title);
 
 export const ThemeSubTitleSM = connect(
-  (state: RootState, ownProps: { text: string | null }): ComponentProps => {
+  (
+    state: RootState,
+    ownProps: { text: string | null; color?: ColorValue }
+  ): ComponentProps => {
     return {
       ComponentId: "ThemeSubTitleSM",
       text: ownProps.text,
       weight: "normal",
       style: { letterSpacing: 1 },
       fontSize: 12,
-      color: "#E7CED2",
+      color: ownProps.color ?? "#E7CED2",
     };
   }
 )(Title);

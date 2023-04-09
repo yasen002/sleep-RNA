@@ -30,7 +30,8 @@ interface ComponentProps {
   source: HTMLImageElement;
   height?: number;
   width?: number;
-  natigate?: ScreenNames;
+  navigate?: "Home" | "Report" | "Community" | "Mine" | "RecentSessions";
+  disabled?: boolean | undefined;
 }
 interface ComponentDispatch {}
 type Props = ComponentProps & ComponentDispatch;
@@ -40,20 +41,21 @@ export const IconImg = ({
   componentId,
   height = 45,
   width = 45,
-  natigate = undefined,
+  navigate = undefined,
+  disabled = undefined,
 }: Props) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const pressHandler = () => {
-    if (!!natigate) {
-      const screen: ScreenNames = natigate;
-      navigation.navigate(natigate);
+    if (!!navigate) {
+      const screen: ScreenNames = navigate;
+      navigation.navigate(navigate);
     }
   };
 
   return (
     <View id={componentId} style={{ ...styles.IconImgBg, height, width }}>
-      <TouchableOpacity onPress={pressHandler}>
+      <TouchableOpacity disabled={disabled} onPress={pressHandler}>
         <Image style={{ ...styles.IconImg, height, width }} source={source} />
       </TouchableOpacity>
     </View>
@@ -74,12 +76,12 @@ const styles = StyleSheet.create({
 export const IconMD = connect(
   (
     state: RootState,
-    ownProps: { source: Props["source"]; navigate?: ScreenNames }
+    ownProps: { source: Props["source"]; navigate?: ComponentProps["navigate"] }
   ): ComponentProps => {
     return {
       componentId: "IconMD",
       source: ownProps.source,
-      natigate: ownProps.navigate,
+      navigate: ownProps.navigate,
     };
   }
 )(IconImg);
@@ -102,7 +104,7 @@ export const HomeIcon = connect(
       source: home,
       width: 24,
       height: 24,
-      natigate: "Home",
+      navigate: "Home",
     };
   }
 )(IconImg);
@@ -114,7 +116,7 @@ export const ReportIcon = connect(
       source: report,
       width: 24,
       height: 24,
-      natigate: "Report",
+      navigate: "Report",
     };
   }
 )(IconImg);
@@ -126,7 +128,7 @@ export const CommunityIcon = connect(
       source: community,
       width: 24,
       height: 24,
-      natigate: "Community",
+      navigate: "Community",
     };
   }
 )(IconImg);
@@ -138,7 +140,7 @@ export const MineIcon = connect(
       source: mine,
       width: 24,
       height: 24,
-      natigate: "Mine",
+      navigate: "Mine",
     };
   }
 )(IconImg);
@@ -195,7 +197,7 @@ export const ClockIcon = connect(
       source: clock,
       width: 20,
       height: 20,
-      natigate: "RecentSessions",
+      navigate: "RecentSessions",
     };
   }
 )(IconImg);
@@ -207,6 +209,7 @@ export const PeaceFulIcon = connect(
       source: peaceful_md,
       width: 100,
       height: 100,
+      disabled: true,
     };
   }
 )(IconImg);
@@ -218,6 +221,7 @@ export const WaterIcon = connect(
       source: water_md,
       width: 100,
       height: 100,
+      disabled: true,
     };
   }
 )(IconImg);
@@ -228,6 +232,7 @@ export const EggIcon = connect((state: RootState, ownProps): ComponentProps => {
     source: egg_md,
     width: 100,
     height: 100,
+    disabled: true,
   };
 })(IconImg);
 
@@ -238,6 +243,7 @@ export const RoofIcon = connect(
       source: roof_md,
       width: 100,
       height: 100,
+      disabled: true,
     };
   }
 )(IconImg);
@@ -249,6 +255,7 @@ export const ArchWayIcon = connect(
       source: archWay_md,
       width: 100,
       height: 100,
+      disabled: true,
     };
   }
 )(IconImg);
@@ -259,5 +266,6 @@ export const SkyIcon = connect((state: RootState, ownProps): ComponentProps => {
     source: sky_md,
     width: 100,
     height: 100,
+    disabled: true,
   };
 })(IconImg);
