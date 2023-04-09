@@ -4,11 +4,11 @@ import Home from "./page/Home";
 import { useDispatch } from "react-redux";
 import { setHeight, setWidth } from "./features/device/slice";
 import {
+  NativeStackNavigationProp,
   createNativeStackNavigator,
-  NativeStackScreenProps,
 } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
-import { RecentSessions } from "./page/RecentSessions";
+import { NavigationContainer, RouteProp } from "@react-navigation/native";
+import { RecentSessions } from "./page/recentSessions/RecentSessions";
 import Breaks from "./page/Breaks";
 import Community from "./page/Community";
 import Focus from "./page/Focus";
@@ -16,7 +16,7 @@ import Mine from "./page/Mine";
 import Relax from "./page/Relax";
 import Report from "./page/Report";
 import Sleep from "./page/Sleep";
-
+import BreaksDetail, { BreakTopic } from "./page/BreaksDetail";
 //--Navigator Types
 export type RootStackParamList = {
   Home: undefined;
@@ -28,9 +28,23 @@ export type RootStackParamList = {
   Mine: undefined;
   Relax: undefined;
   Report: undefined;
+  BreaksDetail: { topic: BreakTopic };
 };
 export type ScreenNames = keyof RootStackParamList;
 // export type HomeNavProps = NativeStackScreenProps<RootStackParamList, "Home">;
+
+type BreaksDetailScreenRouteProp = RouteProp<
+  RootStackParamList,
+  "BreaksDetail"
+>;
+type BreaksDetailScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "BreaksDetail"
+>;
+export type BreaksDetailScreenProps = {
+  route: BreaksDetailScreenRouteProp;
+  navigation: BreaksDetailScreenNavigationProp;
+};
 
 /**
  * This component is created to have App.tsx as a top level component.
@@ -46,7 +60,6 @@ const Main = () => {
   useEffect(() => {
     dispatch(setWidth(width));
     dispatch(setHeight(height));
-    console.log("dispatch width and height");
   }, []);
 
   return (
@@ -71,6 +84,15 @@ const Main = () => {
         <Stack.Screen name="Relax" component={Relax} />
         <Stack.Screen name="Report" component={Report} />
         <Stack.Screen name="Sleep" component={Sleep} />
+        <Stack.Screen
+          name="BreaksDetail"
+          component={BreaksDetail}
+          options={{
+            headerShown: true,
+            headerTransparent: true,
+            title: "",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

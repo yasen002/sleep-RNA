@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import TabPages from "./TabPage";
+import BreaksDetail from "./BreaksDetail";
+import Breaks from "./Breaks";
 
 type Props = {};
 
 const Focus = (props: Props) => {
   return (
     <View>
-      <Text>Focus</Text>
+      <Breaks />
     </View>
   );
 };
